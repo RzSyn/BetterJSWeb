@@ -2422,3 +2422,13 @@ html {
     padding-left: 12px !important;
     padding-right: 12px !important;
 }
+
+
+/* Sidebar Categories list hover styles */
+.sidebar-cat-list a {
+    transition: all 0.2s ease !important;
+}
+.sidebar-cat-list a:hover {
+    color: var(--secondary-color, #ffcc00) !important;
+    padding-left: 5px !important;
+}
