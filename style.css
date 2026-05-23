@@ -2153,6 +2153,9 @@ body {
     #main-content-sticky {
         width: calc(100% - 280px) !important;
         margin-left: 280px !important;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        box-sizing: border-box !important;
         overflow-x: hidden !important;
     }
     
@@ -2424,11 +2427,60 @@ html {
 }
 
 
-/* Sidebar Categories list hover styles */
-.sidebar-cat-list a {
-    transition: all 0.2s ease !important;
+/* Sidebar Widgets Adjustments inside White Card (Antigravity) */
+#sidebar-map h4, #sidebar-categories h4 {
+    color: #005a2b !important; /* Rich Dark Green Theme Header */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.06) !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 12px !important;
 }
-.sidebar-cat-list a:hover {
-    color: var(--secondary-color, #ffcc00) !important;
-    padding-left: 5px !important;
+
+#sidebar-map iframe {
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 8px !important;
+}
+
+.sidebar-cat-list li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.sidebar-cat-list li:last-child {
+    border-bottom: none !important;
+}
+
+.sidebar-cat-list li a {
+    color: #444444 !important; /* High contrast readable dark text */
+    font-family: 'Sarabun', sans-serif !important;
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    transition: all 0.25s ease !important;
+    display: block !important;
+    padding: 2px 0 !important;
+}
+
+.sidebar-cat-list li a i.fa-angle-right {
+    color: #1caa78 !important; /* Theme Green for arrows */
+    transition: transform 0.25s ease !important;
+}
+
+.sidebar-cat-list li a:hover {
+    color: #1caa78 !important; /* Theme Green hover */
+    padding-left: 6px !important;
+}
+
+.sidebar-cat-list li a:hover i.fa-angle-right {
+    transform: translateX(4px) !important;
+}
+
+#custom_html-13 hr {
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Responsive Sidebar Widgets inside main content (Facebook & Youtube) */
+#custom_html-14 iframe, 
+#custom_html-15 iframe {
+    width: 100% !important;
+    max-width: 360px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06) !important;
 }
