@@ -1,0 +1,6 @@
+node_modules/
+scratch/
+index_clean.html
+.gemini/
+*.log
+.system_generated/
