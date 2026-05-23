@@ -740,6 +740,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to render all posts dynamically
     window.renderAllPosts = function(posts) {
+        window.wpPostsSyncInitialized = true;
         console.log("Rendering posts dynamically from WordPress API...");
 
         // A. Populate newspaperss featured top slider (#slider)
@@ -910,6 +911,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fallback static high quality data from data.js
     window.renderStaticFallbacks = function() {
+        window.wpPostsSyncInitialized = true;
         console.log("Loading offline premium static data fallback from data.js...");
         // Reconstruct posts structure from schoolData static items
         const dummyPosts = [
@@ -964,6 +966,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Primary entry point for Sync
     function syncWordPressPosts() {
         console.log("Initiating real-time WordPress REST API sync...");
+        window.wpPostsSyncInitialized = false;
+        
+        // Timeout fallback of 2.0 seconds in case network/CORS hangs or JSONP fails silently
+        const fallbackTimeout = setTimeout(() => {
+            if (!window.wpPostsSyncInitialized) {
+                console.warn("WordPress REST API sync timed out (2.0s). Resorting to static database fallback...");
+                window.renderStaticFallbacks();
+            }
+        }, 2000);
         
         // 1. Try standard AJAX fetch first
         fetch('http://www.joseph.ac.th/wp-json/wp/v2/posts?_embed&per_page=10')
@@ -972,6 +983,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return res.json();
             })
             .then(posts => {
+                clearTimeout(fallbackTimeout);
                 if (Array.isArray(posts) && posts.length > 0) {
                     window.renderAllPosts(posts);
                 } else {
@@ -980,11 +992,13 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(err => {
                 console.warn("Standard AJAX fetch failed. Attempting CORS JSONP fallback...", err);
+                if (window.wpPostsSyncInitialized) return; // Already timed out and fell back
                 
                 // 2. Dynamic JSONP script insertion to bypass CORS
                 const script = document.createElement('script');
                 script.src = 'http://www.joseph.ac.th/wp-json/wp/v2/posts?_embed&per_page=10&_jsonp=handleWpPosts';
                 script.onerror = () => {
+                    clearTimeout(fallbackTimeout);
                     console.error("JSONP fetch completely failed. Resorting to static database.");
                     window.renderStaticFallbacks();
                 };
