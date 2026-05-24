@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Theme Management (Dark / Light Mode)
     // ==========================================
     const htmlElement = document.documentElement;
-    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleBtns = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
     
     // Check saved theme or default to system preference
     const savedTheme = localStorage.getItem('theme');
@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
         htmlElement.setAttribute('data-theme', 'light');
     }
 
-    // Smooth Theme Toggle Handler
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
+    // Smooth Theme Toggle Handler for all buttons
+    themeToggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-theme');
             let newTheme = 'light';
             
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 applyLogoFallback(footerLogo);
             }
         });
-    }
+    });
 
     // ==========================================
     // 2. Interactive Department Tab Toggling
