@@ -689,11 +689,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function getPostImage(post) {
         try {
             if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
-                return post._embedded['wp:featuredmedia'][0].source_url || post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+                const imgUrl = post._embedded['wp:featuredmedia'][0].source_url || post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+                if (imgUrl) {
+                    const urlParts = imgUrl.split('/');
+                    const rawFilename = urlParts[urlParts.length - 1];
+                    // Sanitize the exact same way as Python re.sub(r'[^a-zA-Z0-9_.-]', '_', filename)
+                    const sanitizedFilename = rawFilename.replace(/[^a-zA-Z0-9_.-]/g, '_');
+                    return `./images/original/${sanitizedFilename}`;
+                }
             }
         } catch (e) {}
         // Fallback static high quality image
-        return 'http://www.joseph.ac.th/wp-content/uploads/2026/04/05.jpg';
+        return './images/original/05.jpg';
     }
 
     // Helper to get author name safely

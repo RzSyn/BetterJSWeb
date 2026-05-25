@@ -29,8 +29,8 @@ def log(message):
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(msg + "\n")
 
-def get_latest_post():
-    url = "http://www.joseph.ac.th/wp-json/wp/v2/posts?_embed&per_page=1"
+def get_latest_posts(limit=10):
+    url = f"http://www.joseph.ac.th/wp-json/wp/v2/posts?_embed&per_page={limit}"
     req = urllib.request.Request(
         url, 
         headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
@@ -38,8 +38,8 @@ def get_latest_post():
     with urllib.request.urlopen(req, timeout=15) as response:
         posts = json.loads(response.read().decode('utf-8'))
         if posts and len(posts) > 0:
-            return posts[0]
-    return None
+            return posts
+    return []
 
 def download_featured_image(post):
     try:
@@ -79,41 +79,43 @@ def run_sync():
                 except:
                     pass
         
-        post = get_latest_post()
-        if not post:
+        posts = get_latest_posts(limit=10)
+        if not posts:
             log("No posts found on the server.")
             return
 
-        current_id = post.get('id', 0)
-        title = post.get('title', {}).get('rendered', 'Untitled')
-        
-        if current_id == 0:
-            log("Invalid post data received.")
-            return
+        # Find all posts newer than last_id, sorted oldest to newest
+        new_posts = [p for p in posts if p.get('id', 0) > last_id]
+        new_posts.sort(key=lambda p: p.get('id', 0))
 
-        log(f"Latest post on server: ID={current_id}, Title='{title}'")
-        
-        # If it's a new post
-        if current_id > last_id:
-            log(f"NEW POST DETECTED! Previous ID: {last_id}, New ID: {current_id}")
+        if len(new_posts) > 0:
+            log(f"NEW POSTS DETECTED! Previous Max ID: {last_id}, New Posts Count: {len(new_posts)}")
             
-            # 1. Download new assets
-            download_featured_image(post)
+            # 1. Download featured images for all new posts
+            downloaded_count = 0
+            max_new_id = last_id
+            for p in new_posts:
+                pid = p.get('id', 0)
+                title = p.get('title', {}).get('rendered', 'Untitled')
+                log(f"Processing post ID: {pid}, Title: '{title}'")
+                download_featured_image(p)
+                downloaded_count += 1
+                max_new_id = max(max_new_id, pid)
             
             # 2. Synchronize Git repository (vite production build omitted for 10x faster dynamic sync)
             log("Synchronizing Git repository...")
             subprocess.run(["git", "add", "."], check=True)
-            commit_msg = f"chore(sync): automated update for new school post ID {current_id}"
+            commit_msg = f"chore(sync): automated update for {len(new_posts)} new school post(s). Max ID: {max_new_id}"
             subprocess.run(["git", "commit", "-m", commit_msg], check=True)
             subprocess.run(["git", "push", "origin", "main"], check=True)
             
-            # 3. Save new post ID
+            # 3. Save maximum new post ID
             with open(LAST_POST_ID_FILE, "w") as f:
-                f.write(str(current_id))
+                f.write(str(max_new_id))
                 
-            log(f"Update completed and deployed successfully for post ID {current_id}!")
+            log(f"Update completed and deployed successfully. Processed {downloaded_count} post(s), max ID: {max_new_id}!")
         else:
-            log("Website is up-to-date. No new posts detected.")
+            log(f"Website is up-to-date (Latest server post ID is {posts[0].get('id', 0)}). No new posts detected.")
             
     except Exception as e:
         log(f"Error during update process: {e}")
