@@ -26,6 +26,18 @@ def log(message):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     msg = f"[{timestamp}] {message}"
     print(msg)
+    
+    # Auto-rotate log if it exceeds 1MB to prevent disk space waste
+    try:
+        if os.path.exists(LOG_FILE) and os.path.getsize(LOG_FILE) > 1 * 1024 * 1024:
+            with open(LOG_FILE, "r", encoding="utf-8", errors="ignore") as f:
+                lines = f.readlines()
+            # Keep only the last 1000 lines
+            with open(LOG_FILE, "w", encoding="utf-8") as f:
+                f.writelines(lines[-1000:])
+    except Exception:
+        pass
+
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(msg + "\n")
 
