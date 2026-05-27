@@ -43,21 +43,25 @@ html {
 }
 
 [data-theme="dark"] {
-    /* Dark Mode Tokens */
-    --bg-main: #0b1109;             /* Very deep forest black */
-    --bg-card: #131b11;             /* Charcoal-green container */
-    --bg-nav: rgba(11, 17, 9, 0.85);
-    --text-primary: #f1f7f0;        /* Bright mint white */
-    --text-secondary: #a3bfa0;      /* Muted sage */
-    --border-color: rgba(255, 204, 0, 0.18);
-    --card-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-    --glow-effect: 0 0 25px rgba(0, 90, 43, 0.35);
-    --glow-yellow: 0 0 25px rgba(255, 204, 0, 0.3); /* Aura glowing yellow gold */
-    --wave-fill: #0b1109;
-    --badge-bg: rgba(255, 204, 0, 0.12);
+    /* Dark Mode Tokens — Premium Deep Forest Night */
+    --bg-main: #080e07;             /* Deep forest black */
+    --bg-card: #0f1a0d;             /* Elevated dark green-tinted surface */
+    --bg-card-alt: #141f12;         /* Slightly lighter alternative card */
+    --bg-nav: rgba(8, 14, 7, 0.92);
+    --text-primary: #eef5ec;        /* Soft bright white with green tint */
+    --text-secondary: #8aab86;      /* Muted sage green — better contrast than before */
+    --border-color: rgba(255, 204, 0, 0.14);
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.4);
+    --glow-effect: 0 0 30px rgba(0, 128, 61, 0.4);
+    --glow-yellow: 0 0 28px rgba(255, 204, 0, 0.35);
+    --glow-strong: 0 0 45px rgba(255, 204, 0, 0.5);
+    --wave-fill: #080e07;
+    --badge-bg: rgba(255, 204, 0, 0.1);
     --badge-text: #ffcc00;
-    --input-bg: #1b2618;
-    --scrollbar-track: #141c11;
+    --input-bg: #162013;
+    --scrollbar-track: #0f150d;
+    --section-alt-bg: #0c160a;      /* Alternate section background */
 }
 
 /* Image crop and head cut safeguard */
@@ -79,6 +83,12 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+/* Dark mode subtle noise texture on body for depth */
+[data-theme="dark"] body {
+    background-image: radial-gradient(ellipse at 15% 10%, rgba(0, 90, 43, 0.08) 0%, transparent 55%),
+                      radial-gradient(ellipse at 85% 90%, rgba(0, 60, 30, 0.06) 0%, transparent 55%);
 }
 
 /* Custom Scrollbar */
@@ -112,16 +122,25 @@ body {
     width: 100%;
     z-index: 1000;
     background-color: var(--bg-nav);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px) saturate(1.5);
+    -webkit-backdrop-filter: blur(16px) saturate(1.5);
     border-bottom: 1px solid var(--border-color);
     padding: 12px 0;
     transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
+[data-theme="dark"] .navbar {
+    border-bottom-color: rgba(255, 204, 0, 0.1);
+    box-shadow: 0 1px 0 rgba(255, 204, 0, 0.05), 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
 .navbar.scrolled {
     padding: 8px 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 1px 0 rgba(255, 204, 0, 0.08);
 }
 
 .nav-container {
@@ -587,10 +606,20 @@ body {
                 background-color var(--transition-speed) ease;
 }
 
+/* Dark mode cards get a subtle inner glow edge */
+[data-theme="dark"] .card-glow {
+    border-color: rgba(255, 255, 255, 0.05);
+    background: linear-gradient(145deg, #111a0f 0%, #0d1509 100%);
+}
+
 .card-glow:hover {
     transform: translateY(-8px) scale(1.01);
     border-color: var(--secondary-color);
     box-shadow: var(--glow-yellow);
+}
+
+[data-theme="dark"] .card-glow:hover {
+    box-shadow: var(--glow-strong), 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 /* History Section */
@@ -820,6 +849,11 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
+[data-theme="dark"] .departments-section {
+    background-color: var(--section-alt-bg, #0c160a);
+    border-color: rgba(255, 204, 0, 0.08);
+}
+
 .dept-tabs {
     display: flex;
     justify-content: center;
@@ -1045,6 +1079,10 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
+[data-theme="dark"] .news-section {
+    border-color: rgba(255, 255, 255, 0.04);
+}
+
 .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1056,6 +1094,11 @@ body {
     flex-direction: column;
     height: 100%;
     overflow: hidden;
+}
+
+[data-theme="dark"] .news-card {
+    background: linear-gradient(160deg, #111a0f 0%, #0d1609 100%);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
 }
 
 .news-img-wrapper {
@@ -1280,11 +1323,17 @@ body {
 /* Footer Section */
 .footer {
     position: relative;
-    background-color: #0b1109;
+    background-color: #060d05;
     color: #fff;
     padding-top: 100px;
     border-top: 4px solid var(--secondary-color);
     margin-top: 100px;
+}
+
+[data-theme="dark"] .footer {
+    background: linear-gradient(180deg, #060d05 0%, #040b03 100%);
+    border-top-color: var(--secondary-color);
+    box-shadow: inset 0 1px 0 rgba(255, 204, 0, 0.15);
 }
 
 /* Floating Contact Details overlapping header of Footer */
@@ -1570,6 +1619,11 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
+[data-theme="dark"] .gospel-section {
+    background: linear-gradient(180deg, #0d1609 0%, #0a1308 100%);
+    border-color: rgba(255, 255, 255, 0.04);
+}
+
 .gospel-intro-card {
     display: flex;
     align-items: center;
@@ -1635,6 +1689,11 @@ body {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
+[data-theme="dark"] .gospel-card {
+    background: linear-gradient(145deg, #0f190d 0%, #0a1208 100%);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
 .gospel-card::before {
     content: '';
     position: absolute;
@@ -1647,7 +1706,7 @@ body {
 }
 
 [data-theme="dark"] .gospel-card::before {
-    background-color: var(--border-color);
+    background: linear-gradient(90deg, rgba(255, 204, 0, 0.25), rgba(0, 128, 61, 0.25));
 }
 
 .gospel-card:hover {
@@ -1728,6 +1787,11 @@ body {
     padding: 100px 0;
     background-color: rgba(0, 90, 43, 0.02);
     border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .gallery-section {
+    background-color: var(--section-alt-bg, #0c160a);
+    border-color: rgba(255, 255, 255, 0.04);
 }
 
 .gallery-tabs {
@@ -1831,6 +1895,10 @@ body {
     padding: 20px;
     opacity: 0.9;
     transition: opacity 0.3s ease;
+}
+
+[data-theme="dark"] .gallery-overlay-mask {
+    background: linear-gradient(to top, rgba(0, 20, 10, 0.95) 0%, rgba(0, 10, 5, 0.5) 60%, transparent 100%);
 }
 
 .gallery-card:hover .gallery-overlay-mask {
@@ -2000,6 +2068,11 @@ body {
     box-shadow: 0 0 8px #39e68c;
     animation: live-pulse 1.8s infinite;
     vertical-align: middle;
+}
+
+[data-theme="dark"] .live-dot {
+    background-color: #4dffaa;
+    box-shadow: 0 0 12px #4dffaa, 0 0 24px rgba(77, 255, 170, 0.3);
 }
 
 @keyframes live-pulse {
@@ -2290,9 +2363,20 @@ html {
     margin-bottom: 24px !important;
 }
 
+[data-theme="dark"] .layout3-post {
+    background: linear-gradient(160deg, #111a0f 0%, #0d1509 100%) !important;
+    border-color: rgba(255, 255, 255, 0.06) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
 .layout3-post:hover {
     transform: translateY(-6px) !important;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+[data-theme="dark"] .layout3-post:hover {
+    border-color: rgba(255, 204, 0, 0.25) !important;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 204, 0, 0.08) !important;
 }
 
 .layout3-post .thumbnail-resize {
