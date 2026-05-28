@@ -73,7 +73,10 @@ def release_lock():
 def log(message):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     msg = f"[{timestamp}] {message}"
-    print(msg)
+    try:
+        print(msg)
+    except Exception:
+        pass
     
     # Auto-rotate log if it exceeds 1MB to prevent disk space waste
     try:
