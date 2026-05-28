@@ -810,6 +810,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             sliderContainer.innerHTML = slidesHtml;
 
+            // Apply background image fallback check for the slider containers
+            sliderContainer.querySelectorAll('.slider-container').forEach(container => {
+                const style = container.style.backgroundImage;
+                const match = style.match(/url\("?([^"]*)"?\)/);
+                if (match && match[1]) {
+                    const liveBgUrl = match[1];
+                    const fallbackBgUrl = container.getAttribute('data-fallback-bg');
+                    if (liveBgUrl && fallbackBgUrl && !liveBgUrl.startsWith('data:')) {
+                        const testImg = new Image();
+                        testImg.onerror = () => {
+                            container.style.backgroundImage = `url("${fallbackBgUrl}")`;
+                        };
+                        testImg.src = liveBgUrl;
+                    }
+                }
+            });
+
             // Re-initialize slick slider via jQuery
             try {
                 jQuery(sliderContainer).slick({
