@@ -1,9 +1,5 @@
 import sys
 import io
-# Override stdout and stderr to handle Unicode (Thai characters) on Windows consoles
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
-
 import os
 import time
 import json
@@ -13,14 +9,66 @@ import subprocess
 import datetime
 import re
 
+# pythonw.exe has no console, so stdout/stderr may be None.
+# Safely redirect only when running in a console (python.exe).
+try:
+    if sys.stdout is not None and hasattr(sys.stdout, 'buffer'):
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    if sys.stderr is not None and hasattr(sys.stderr, 'buffer'):
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+except Exception:
+    pass
+
 # Configuration
 CHECK_INTERVAL_HOURS = 1
 CHECK_INTERVAL_SECONDS = CHECK_INTERVAL_HOURS * 3600
 LAST_POST_ID_FILE = "last_post_id.txt"
 LOG_FILE = "sync_service.log"
+LOCK_FILE = "sync_service.lock"
 WORKSPACE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 os.chdir(WORKSPACE_DIR)
+
+# Single-instance guard: prevent duplicate processes from running simultaneously
+def _pid_exists(pid):
+    """Check if a PID is alive using only the standard library (cross-platform)."""
+    try:
+        if sys.platform == 'win32':
+            import ctypes
+            SYNCHRONIZE = 0x00100000
+            handle = ctypes.windll.kernel32.OpenProcess(SYNCHRONIZE, False, pid)
+            if handle:
+                ctypes.windll.kernel32.CloseHandle(handle)
+                return True
+            return False
+        else:
+            os.kill(pid, 0)
+            return True
+    except Exception:
+        return False
+
+def acquire_lock():
+    """Returns True if we are the only instance running."""
+    if os.path.exists(LOCK_FILE):
+        try:
+            with open(LOCK_FILE, 'r') as f:
+                old_pid = int(f.read().strip())
+            if _pid_exists(old_pid):
+                return False  # Another instance is running
+        except Exception:
+            pass  # PID file corrupted, continue
+    # Write our own PID
+    with open(LOCK_FILE, 'w') as f:
+        f.write(str(os.getpid()))
+    return True
+
+def release_lock():
+    try:
+        if os.path.exists(LOCK_FILE):
+            os.remove(LOCK_FILE)
+    except Exception:
+        pass
+
 
 def log(message):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -133,19 +181,30 @@ def run_sync():
         log(f"Error during update process: {e}")
 
 def main():
-    log("==================================================")
-    log("School Website Automated Sync Service Started")
-    log(f"Interval: {CHECK_INTERVAL_HOURS} hour(s) ({CHECK_INTERVAL_SECONDS} seconds)")
-    log("==================================================")
-    
-    while True:
+    if not acquire_lock():
+        # Another instance is already running, exit silently
         try:
-            run_sync()
-        except Exception as e:
-            log(f"Unexpected error in main loop: {e}")
-            
-        log(f"Sleeping for {CHECK_INTERVAL_HOURS} hour(s)...")
-        time.sleep(CHECK_INTERVAL_SECONDS)
+            log("Another sync service instance is already running. Exiting.")
+        except Exception:
+            pass
+        sys.exit(0)
+
+    try:
+        log("==================================================")
+        log("School Website Automated Sync Service Started")
+        log(f"Interval: {CHECK_INTERVAL_HOURS} hour(s) ({CHECK_INTERVAL_SECONDS} seconds)")
+        log("==================================================")
+        
+        while True:
+            try:
+                run_sync()
+            except Exception as e:
+                log(f"Unexpected error in main loop: {e}")
+                
+            log(f"Sleeping for {CHECK_INTERVAL_HOURS} hour(s)...")
+            time.sleep(CHECK_INTERVAL_SECONDS)
+    finally:
+        release_lock()
 
 if __name__ == "__main__":
     main()
