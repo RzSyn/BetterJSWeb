@@ -102,29 +102,34 @@ def get_latest_posts(limit=10):
     return []
 
 def download_featured_image(post):
+    """Download featured image. Skips if local copy already exists."""
     try:
         if '_embedded' in post and 'wp:featuredmedia' in post['_embedded'] and post['_embedded']['wp:featuredmedia']:
             media = post['_embedded']['wp:featuredmedia'][0]
             img_url = media.get('source_url', '')
             if img_url:
                 filename = img_url.split('/')[-1]
-                # Ensure clean ASCII filename to bypass GitHub Pages / Windows path issues
+                # Sanitize to ASCII-safe filename (same logic as JS getLocalPostImage)
                 filename = re.sub(r'[^a-zA-Z0-9_.-]', '_', filename)
                 target_path = os.path.join('images/original', filename)
-                
+
                 os.makedirs('images/original', exist_ok=True)
-                
+
+                # Skip download if file already exists
+                if os.path.exists(target_path):
+                    return target_path
+
                 req = urllib.request.Request(
-                    img_url, 
+                    img_url,
                     headers={'User-Agent': 'Mozilla/5.0'}
                 )
                 with urllib.request.urlopen(req, timeout=20) as response:
                     with open(target_path, 'wb') as f:
                         f.write(response.read())
-                log(f"Downloaded new featured image: {filename}")
+                log(f"  [IMG] Downloaded: {filename}")
                 return target_path
     except Exception as e:
-        log(f"Error downloading image: {e}")
+        log(f"  [IMG] Error downloading image: {e}")
     return None
 
 POSTS_CACHE_FILE = "posts_cache.json"
@@ -184,34 +189,38 @@ def run_sync():
         # Always update the posts cache file (website reads this instead of live API)
         save_posts_cache(posts)
 
-        # Download featured images for any posts newer than last known ID
+        # Download images for ALL posts (skip if already cached locally)
         new_posts = [p for p in posts if p.get("id", 0) > last_id]
-        new_posts.sort(key=lambda p: p.get("id", 0))
+        downloaded = 0
+        for p in posts:
+            result_path = download_featured_image(p)
+            if result_path:
+                downloaded += 1
+        if downloaded > 0:
+            log(f"Downloaded {downloaded} new image(s).")
 
         if new_posts:
-            log(f"NEW POSTS DETECTED! Previous Max ID: {last_id}, New: {len(new_posts)} post(s)")
+            new_posts.sort(key=lambda p: p.get("id", 0))
+            log(f"NEW POSTS: {len(new_posts)} post(s) since last check (ID > {last_id})")
             for p in new_posts:
-                pid = p.get("id", 0)
-                title = p.get("title", {}).get("rendered", "Untitled")
-                log(f"  → Post ID {pid}: '{title}'")
-                download_featured_image(p)
+                log(f"  → [{p.get('id')}] {p.get('title', {}).get('rendered', 'Untitled')[:60]}")
 
-        # Commit and push if cache changed (always on first run, or when new posts arrive)
-        result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
-        changed_files = result.stdout.strip()
-        
+        # Commit and push if anything changed
+        git_status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
+        changed_files = git_status.stdout.strip()
+
         if changed_files:
             log(f"Changes detected, pushing to GitHub Pages...")
             subprocess.run(["git", "add", "."], check=True)
             if new_posts:
-                commit_msg = f"chore(sync): {len(new_posts)} new post(s). Latest ID: {latest_id}"
+                commit_msg = f"chore(sync): {len(new_posts)} new post(s) + {downloaded} image(s). Latest ID: {latest_id}"
             else:
-                commit_msg = f"chore(sync): refresh posts cache. Latest ID: {latest_id}"
+                commit_msg = f"chore(sync): {downloaded} new image(s) cached. Latest ID: {latest_id}"
             subprocess.run(["git", "commit", "-m", commit_msg], check=True)
             subprocess.run(["git", "push", "origin", "main"], check=True)
             log("Successfully pushed to GitHub Pages!")
         else:
-            log(f"No changes. Posts cache is already up-to-date (Latest ID: {latest_id})")
+            log(f"No changes. Everything up-to-date (Latest ID: {latest_id})")
 
         # Save latest post ID
         with open(LAST_POST_ID_FILE, "w") as f:
