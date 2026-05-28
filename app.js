@@ -685,21 +685,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Dynamic Real-time Sync with WordPress REST API
     // ==========================================
     
-    // Helper to get image URL safely
+    // Helper to get image URL safely — returns the live WordPress URL directly.
+    // This avoids broken images when a local copy hasn't been downloaded yet.
     function getPostImage(post) {
         try {
             if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
-                const imgUrl = post._embedded['wp:featuredmedia'][0].source_url || post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+                const imgUrl = post._embedded['wp:featuredmedia'][0].source_url ||
+                    post._embedded['wp:featuredmedia'][0].media_details?.sizes?.medium?.source_url;
+                if (imgUrl) return imgUrl;
+            }
+        } catch (e) {}
+        // Final fallback — local cached image
+        return './images/original/05.jpg';
+    }
+
+    // Returns the local sanitized path for a post image (used as onerror fallback check)
+    function getLocalPostImage(post) {
+        try {
+            if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+                const imgUrl = post._embedded['wp:featuredmedia'][0].source_url;
                 if (imgUrl) {
-                    const urlParts = imgUrl.split('/');
-                    const rawFilename = urlParts[urlParts.length - 1];
-                    // Sanitize the exact same way as Python re.sub(r'[^a-zA-Z0-9_.-]', '_', filename)
+                    const rawFilename = imgUrl.split('/').pop();
                     const sanitizedFilename = rawFilename.replace(/[^a-zA-Z0-9_.-]/g, '_');
                     return `./images/original/${sanitizedFilename}`;
                 }
             }
         } catch (e) {}
-        // Fallback static high quality image
         return './images/original/05.jpg';
     }
 
@@ -772,7 +783,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidesHtml += `
                 <div class="projectitem">
                     <a class="sliderlink" href="${post.link}"> </a>
-                    <div class="slider-container" style="background: url(${getPostImage(post)}) 50% 50% / cover no-repeat;">
+                    <div class="slider-container" style="background: url(${getPostImage(post)}) 50% 50% / cover no-repeat;" data-fallback-bg="${getLocalPostImage(post)}">
                         <div class="post-header-outer is-absolute">
                             <div class="post-header">
                                 <div class="post-cat-info">
@@ -837,7 +848,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="post-thumb-overlay"></div>
                             <span class="thumbnail-post">
                                 <a href="${post.link}">
-                                    <img alt="" class="object-fit-postimg wp-post-image" height="400" loading="lazy" src="${getPostImage(post)}" width="428"/>
+                                    <img alt="" class="object-fit-postimg wp-post-image" height="400" loading="lazy" src="${getPostImage(post)}" width="428" onerror="this.onerror=null;this.src='${getLocalPostImage(post)}'"/>
                                 </a>
                             </span>
                         </div>
@@ -886,7 +897,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="card layout3-post">
                         <div class="thumbnail-resize">
                             <a href="${post.link}">
-                                <img alt="" class="float-center card-image wp-post-image" height="300" loading="lazy" src="${getPostImage(post)}" width="600"/>
+                                <img alt="" class="float-center card-image wp-post-image" height="300" loading="lazy" src="${getPostImage(post)}" width="600" onerror="this.onerror=null;this.src='${getLocalPostImage(post)}'">
                             </a>
                             <div class="post-cat-info is-absolute">
                                 <a class="cat-info-el" href="${post.link}">${getPostCategory(post)}</a>
