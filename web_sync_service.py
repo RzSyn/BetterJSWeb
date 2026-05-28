@@ -127,9 +127,51 @@ def download_featured_image(post):
         log(f"Error downloading image: {e}")
     return None
 
+POSTS_CACHE_FILE = "posts_cache.json"
+
+def save_posts_cache(posts):
+    """Save a slim version of posts to posts_cache.json for the website to read locally."""
+    slim_posts = []
+    for p in posts:
+        slim = {
+            "id": p.get("id"),
+            "date": p.get("date"),
+            "link": p.get("link"),
+            "title": p.get("title", {}),
+            "_embedded": {}
+        }
+        # Keep only essentials from _embedded
+        emb = p.get("_embedded", {})
+        if "wp:featuredmedia" in emb and emb["wp:featuredmedia"]:
+            media = emb["wp:featuredmedia"][0]
+            slim["_embedded"]["wp:featuredmedia"] = [{
+                "source_url": media.get("source_url", "")
+            }]
+        if "author" in emb and emb["author"]:
+            slim["_embedded"]["author"] = [{"name": emb["author"][0].get("name", "admin1")}]
+        if "wp:term" in emb and emb["wp:term"]:
+            terms = []
+            for group in emb["wp:term"]:
+                for t in group:
+                    if t.get("taxonomy") == "category":
+                        terms.append({"name": t.get("name", "ข่าว"), "taxonomy": "category"})
+            slim["_embedded"]["wp:term"] = [terms] if terms else [[{"name": "ประกาศ", "taxonomy": "category"}]]
+        slim_posts.append(slim)
+
+    with open(POSTS_CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(slim_posts, f, ensure_ascii=False, indent=2)
+    log(f"Saved {len(slim_posts)} posts to {POSTS_CACHE_FILE}")
+
 def run_sync():
     log("Checking for updates from Joseph Upatham School website...")
     try:
+        posts = get_latest_posts(limit=10)
+        if not posts:
+            log("No posts found on the server.")
+            return
+
+        latest_id = posts[0].get("id", 0)
+
         # Load last known post ID
         last_id = 0
         if os.path.exists(LAST_POST_ID_FILE):
@@ -138,47 +180,46 @@ def run_sync():
                     last_id = int(f.read().strip())
                 except:
                     pass
-        
-        posts = get_latest_posts(limit=10)
-        if not posts:
-            log("No posts found on the server.")
-            return
 
-        # Find all posts newer than last_id, sorted oldest to newest
-        new_posts = [p for p in posts if p.get('id', 0) > last_id]
-        new_posts.sort(key=lambda p: p.get('id', 0))
+        # Always update the posts cache file (website reads this instead of live API)
+        save_posts_cache(posts)
 
-        if len(new_posts) > 0:
-            log(f"NEW POSTS DETECTED! Previous Max ID: {last_id}, New Posts Count: {len(new_posts)}")
-            
-            # 1. Download featured images for all new posts
-            downloaded_count = 0
-            max_new_id = last_id
+        # Download featured images for any posts newer than last known ID
+        new_posts = [p for p in posts if p.get("id", 0) > last_id]
+        new_posts.sort(key=lambda p: p.get("id", 0))
+
+        if new_posts:
+            log(f"NEW POSTS DETECTED! Previous Max ID: {last_id}, New: {len(new_posts)} post(s)")
             for p in new_posts:
-                pid = p.get('id', 0)
-                title = p.get('title', {}).get('rendered', 'Untitled')
-                log(f"Processing post ID: {pid}, Title: '{title}'")
+                pid = p.get("id", 0)
+                title = p.get("title", {}).get("rendered", "Untitled")
+                log(f"  → Post ID {pid}: '{title}'")
                 download_featured_image(p)
-                downloaded_count += 1
-                max_new_id = max(max_new_id, pid)
-            
-            # 2. Synchronize Git repository (vite production build omitted for 10x faster dynamic sync)
-            log("Synchronizing Git repository...")
+
+        # Commit and push if cache changed (always on first run, or when new posts arrive)
+        result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
+        changed_files = result.stdout.strip()
+        
+        if changed_files:
+            log(f"Changes detected, pushing to GitHub Pages...")
             subprocess.run(["git", "add", "."], check=True)
-            commit_msg = f"chore(sync): automated update for {len(new_posts)} new school post(s). Max ID: {max_new_id}"
+            if new_posts:
+                commit_msg = f"chore(sync): {len(new_posts)} new post(s). Latest ID: {latest_id}"
+            else:
+                commit_msg = f"chore(sync): refresh posts cache. Latest ID: {latest_id}"
             subprocess.run(["git", "commit", "-m", commit_msg], check=True)
             subprocess.run(["git", "push", "origin", "main"], check=True)
-            
-            # 3. Save maximum new post ID
-            with open(LAST_POST_ID_FILE, "w") as f:
-                f.write(str(max_new_id))
-                
-            log(f"Update completed and deployed successfully. Processed {downloaded_count} post(s), max ID: {max_new_id}!")
+            log("Successfully pushed to GitHub Pages!")
         else:
-            log(f"Website is up-to-date (Latest server post ID is {posts[0].get('id', 0)}). No new posts detected.")
-            
+            log(f"No changes. Posts cache is already up-to-date (Latest ID: {latest_id})")
+
+        # Save latest post ID
+        with open(LAST_POST_ID_FILE, "w") as f:
+            f.write(str(latest_id))
+
     except Exception as e:
-        log(f"Error during update process: {e}")
+        log(f"Error during sync: {e}")
+
 
 def main():
     if not acquire_lock():

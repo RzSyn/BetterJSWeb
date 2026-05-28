@@ -983,46 +983,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Primary entry point for Sync
     function syncWordPressPosts() {
-        console.log("Initiating real-time WordPress REST API sync...");
+        console.log("Loading posts from local cache (posts_cache.json)...");
         window.wpPostsSyncInitialized = false;
-        
-        // Timeout fallback of 2.0 seconds in case network/CORS hangs or JSONP fails silently
+
+        // Timeout fallback — if everything fails, use static data
         const fallbackTimeout = setTimeout(() => {
             if (!window.wpPostsSyncInitialized) {
-                console.warn("WordPress REST API sync timed out (2.0s). Resorting to static database fallback...");
+                console.warn("All data sources timed out. Using static fallback.");
                 window.renderStaticFallbacks();
             }
-        }, 2000);
-        
-        // 1. Try standard AJAX fetch first
-        fetch('http://www.joseph.ac.th/wp-json/wp/v2/posts?_embed&per_page=10')
+        }, 5000);
+
+        // STEP 1: Load local posts_cache.json (no CORS, always works on GitHub Pages)
+        fetch('./posts_cache.json?t=' + Date.now())
             .then(res => {
-                if (!res.ok) throw new Error("CORS or Network issue");
+                if (!res.ok) throw new Error("posts_cache.json not found");
                 return res.json();
             })
             .then(posts => {
                 clearTimeout(fallbackTimeout);
                 if (Array.isArray(posts) && posts.length > 0) {
+                    console.log("Loaded", posts.length, "posts from local cache.");
                     window.renderAllPosts(posts);
                 } else {
-                    window.renderStaticFallbacks();
+                    throw new Error("Empty cache");
                 }
             })
-            .catch(err => {
-                console.warn("Standard AJAX fetch failed. Attempting CORS JSONP fallback...", err);
-                if (window.wpPostsSyncInitialized) return; // Already timed out and fell back
-                
-                // 2. Dynamic JSONP script insertion to bypass CORS
-                const script = document.createElement('script');
-                script.src = 'http://www.joseph.ac.th/wp-json/wp/v2/posts?_embed&per_page=10&_jsonp=handleWpPosts';
-                script.onerror = () => {
-                    clearTimeout(fallbackTimeout);
-                    console.error("JSONP fetch completely failed. Resorting to static database.");
-                    window.renderStaticFallbacks();
-                };
-                document.body.appendChild(script);
+            .catch(cacheErr => {
+                console.warn("posts_cache.json unavailable:", cacheErr.message, "— trying live WP API...");
+
+                // STEP 2: Try live WordPress REST API (may fail on GitHub Pages due to CORS)
+                fetch('http://www.joseph.ac.th/wp-json/wp/v2/posts?_embed&per_page=10')
+                    .then(res => {
+                        if (!res.ok) throw new Error("CORS or Network issue");
+                        return res.json();
+                    })
+                    .then(posts => {
+                        clearTimeout(fallbackTimeout);
+                        if (Array.isArray(posts) && posts.length > 0) {
+                            window.renderAllPosts(posts);
+                        } else {
+                            window.renderStaticFallbacks();
+                        }
+                    })
+                    .catch(() => {
+                        // STEP 3: JSONP bypass attempt
+                        if (window.wpPostsSyncInitialized) return;
+                        const script = document.createElement('script');
+                        script.src = 'http://www.joseph.ac.th/wp-json/wp/v2/posts?_embed&per_page=10&_jsonp=handleWpPosts';
+                        script.onerror = () => {
+                            clearTimeout(fallbackTimeout);
+                            window.renderStaticFallbacks();
+                        };
+                        document.body.appendChild(script);
+                    });
             });
     }
+
 
     // Run sync
     syncWordPressPosts();
