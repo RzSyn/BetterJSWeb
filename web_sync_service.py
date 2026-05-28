@@ -119,8 +119,13 @@ def download_featured_image(post):
                 if os.path.exists(target_path):
                     return target_path
 
+                import urllib.parse
+                parts = urllib.parse.urlparse(img_url)
+                quoted_path = urllib.parse.quote(parts.path)
+                quoted_url = urllib.parse.urlunparse(parts._replace(path=quoted_path))
+
                 req = urllib.request.Request(
-                    img_url,
+                    quoted_url,
                     headers={'User-Agent': 'Mozilla/5.0'}
                 )
                 with urllib.request.urlopen(req, timeout=20) as response:
