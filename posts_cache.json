@@ -1,5 +1,61 @@
 [
   {
+    "id": 8772,
+    "date": "2026-06-19T14:33:29",
+    "link": "http://www.joseph.ac.th/2026/06/19/%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b9%84%e0%b8%ab%e0%b8%a7%e0%b9%89%e0%b8%84%e0%b8%a3%e0%b8%b9%e0%b8%a3%e0%b8%b0%e0%b8%94%e0%b8%b1%e0%b8%9a%e0%b8%9b%e0%b8%90%e0%b8%a1%e0%b8%a7-2/",
+    "title": {
+      "rendered": "งานวันไหว้ครูระดับปฐมวัย"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/LINE_ALBUM_180669💐ไหว้ครูปฐมวัย_260619_16.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "อนุบาล",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 8728,
+    "date": "2026-06-19T14:29:19",
+    "link": "http://www.joseph.ac.th/2026/06/19/english-day-camp-%e0%b8%a3%e0%b8%b0%e0%b8%94%e0%b8%b1%e0%b8%9a%e0%b8%8a%e0%b8%b1%e0%b9%89%e0%b8%99%e0%b8%ad%e0%b8%99%e0%b8%b8%e0%b8%9a%e0%b8%b2%e0%b8%a5-2-2/",
+    "title": {
+      "rendered": "&#8220;English Day Camp&#8221;  ระดับชั้นอนุบาล 2"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/LINE_ALBUM_English-Day-Campอนุบาล-2_260618_29.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "อนุบาล",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
     "id": 8622,
     "date": "2026-06-16T13:47:06",
     "link": "http://www.joseph.ac.th/2026/06/16/english-day-camp-%e0%b8%a3%e0%b8%b0%e0%b8%94%e0%b8%b1%e0%b8%9a%e0%b8%8a%e0%b8%b1%e0%b9%89%e0%b8%99%e0%b8%ad%e0%b8%99%e0%b8%b8%e0%b8%9a%e0%b8%b2%e0%b8%a5-3-2/",
@@ -210,62 +266,6 @@
       "wp:featuredmedia": [
         {
           "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/03/02.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "ประกาศ",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 8474,
-    "date": "2026-03-13T15:10:36",
-    "link": "http://www.joseph.ac.th/2026/03/13/%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%81%e0%b8%b2%e0%b8%a8%e0%b8%9c%e0%b8%a5%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%80%e0%b8%a3%e0%b8%b5%e0%b8%a2%e0%b8%99-%e0%b8%9b-1-%e0%b8%a1-5/",
-    "title": {
-      "rendered": "ประกาศผลการเรียน ป.1-ม.5"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/03/01.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "ประกาศ",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 8471,
-    "date": "2026-03-09T10:46:15",
-    "link": "http://www.joseph.ac.th/2026/03/09/%e0%b8%a3%e0%b9%88%e0%b8%a7%e0%b8%a1%e0%b8%89%e0%b8%a5%e0%b8%ad%e0%b8%87%e0%b8%a7%e0%b8%b2%e0%b8%a3%e0%b8%b0%e0%b8%9e%e0%b8%b4%e0%b9%80%e0%b8%a8%e0%b8%a9-%e0%b8%84%e0%b8%a3%e0%b8%9a%e0%b8%a3%e0%b8%ad/",
-    "title": {
-      "rendered": "ร่วมฉลองวาระพิเศษ ครบรอบ 60 ปี แห่งความภูมิใจ โรงเรียนยอแซฟอุปถัมภ์"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/03/12.jpg"
         }
       ],
       "author": [
