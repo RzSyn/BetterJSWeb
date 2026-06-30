@@ -1,5 +1,97 @@
 [
   {
+    "id": 9386,
+    "date": "2026-06-30T08:43:12",
+    "link": "http://www.joseph.ac.th/2026/06/30/%e0%b9%80%e0%b8%94%e0%b9%87%e0%b8%81%e0%b9%86-%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b8%84%e0%b8%b8%e0%b8%93%e0%b8%84%e0%b8%a3%e0%b8%b9%e0%b8%9f%e0%b8%ab%e0%b8%81%e0%b8%94-%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b8%84/",
+    "title": {
+      "rendered": "เด็กๆ และคุณครูฟหกด และคุณครูเข้ารับการฉีดวัคซีนป้องกันโรคไข้หวัดใหญ่"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/LINE_ALBUM_📌29-มิ.ย.-2596-💉🩺-วัคซีนไข้หวัดใหญ่_260630_8.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "กิจกรรม",
+            "taxonomy": "category"
+          },
+          {
+            "name": "อนุบาล",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 9369,
+    "date": "2026-06-30T08:35:38",
+    "link": "http://www.joseph.ac.th/2026/06/30/%e0%b8%a0%e0%b8%b2%e0%b8%a9%e0%b8%b2%e0%b8%88%e0%b8%b5%e0%b8%99%e0%b8%99%e0%b9%88%e0%b8%b2%e0%b8%a3%e0%b8%b9%e0%b9%89-%e0%b8%aa%e0%b8%99%e0%b8%b8%e0%b8%81%e0%b8%81%e0%b8%b1%e0%b8%9a%e0%b8%81%e0%b8%b2/",
+    "title": {
+      "rendered": "ภาษาจีนน่ารู้ สนุกกับการเรียนรู้ตั้งแต่ปฐมวัย"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/LINE_ALBUM_💖29-มิ.ย.2569-🌟-ภาษาจีนน่ารู้_260630_1.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "กิจกรรม",
+            "taxonomy": "category"
+          },
+          {
+            "name": "อนุบาล",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 9322,
+    "date": "2026-06-30T08:32:24",
+    "link": "http://www.joseph.ac.th/2026/06/30/%e0%b9%82%e0%b8%84%e0%b8%a3%e0%b8%87%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%ab%e0%b8%a5%e0%b8%b1%e0%b8%81%e0%b8%aa%e0%b8%b9%e0%b8%95%e0%b8%a3%e0%b8%97%e0%b9%89%e0%b8%ad%e0%b8%87%e0%b8%96%e0%b8%b4%e0%b9%88-3/",
+    "title": {
+      "rendered": "โครงการหลักสูตรท้องถิ่นระดับปฐมวัย ภายใต้หัวข้อ &#8220;ชุมชนของฉัน&#8221;"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/LINE_ALBUM_26-มิถุนายน-69-🏡✨-ชุมชนของฉัน.อนุบาล-1_260630_3.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "กิจกรรม",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
     "id": 9289,
     "date": "2026-06-23T10:44:18",
     "link": "http://www.joseph.ac.th/2026/06/23/%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%81%e0%b8%a7%e0%b8%94%e0%b8%88%e0%b8%b1%e0%b8%94%e0%b8%9e%e0%b8%b2%e0%b8%99%e0%b9%84%e0%b8%ab%e0%b8%a7%e0%b8%b1%e0%b8%84%e0%b8%a3%e0%b8%b9%e0%b8%9b%e0%b8%a3%e0%b8%b0/",
@@ -217,94 +309,6 @@
           },
           {
             "name": "แผนกชาย",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 8994,
-    "date": "2026-06-23T09:41:04",
-    "link": "http://www.joseph.ac.th/2026/06/23/%e0%b8%9e%e0%b8%b4%e0%b8%98%e0%b8%b5%e0%b8%9a%e0%b8%b9%e0%b8%8a%e0%b8%b2%e0%b8%82%e0%b8%ad%e0%b8%9a%e0%b8%9e%e0%b8%a3%e0%b8%b0%e0%b8%84%e0%b8%b8%e0%b8%93%e0%b9%82%e0%b8%ad%e0%b8%81%e0%b8%b2%e0%b8%aa-4/",
-    "title": {
-      "rendered": "พิธีบูชาขอบพระคุณโอกาสเปิดปีการศึกษา 2569 รอบที่ 1"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/10.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "กิจกรรม",
-            "taxonomy": "category"
-          },
-          {
-            "name": "แผนกชาย",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 8967,
-    "date": "2026-06-23T09:32:09",
-    "link": "http://www.joseph.ac.th/2026/06/23/%e0%b8%9e%e0%b8%b4%e0%b8%98%e0%b8%b5%e0%b8%9a%e0%b8%b9%e0%b8%8a%e0%b8%b2%e0%b8%82%e0%b8%ad%e0%b8%9a%e0%b8%9e%e0%b8%a3%e0%b8%b0%e0%b8%84%e0%b8%b8%e0%b8%93%e0%b9%82%e0%b8%ad%e0%b8%81%e0%b8%b2%e0%b8%aa-3/",
-    "title": {
-      "rendered": "พิธีบูชาขอบพระคุณโอกาสเปิดปีการศึกษา 2569 รอบที่ 2"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/001.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "กิจกรรม",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 8817,
-    "date": "2026-06-23T09:24:28",
-    "link": "http://www.joseph.ac.th/2026/06/23/%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%8a%e0%b8%b8%e0%b8%a1%e0%b8%84%e0%b8%a3%e0%b8%b9-2-%e0%b9%81%e0%b8%9c%e0%b8%99%e0%b8%81-%e0%b8%81%e0%b9%88%e0%b8%ad%e0%b8%99%e0%b9%80%e0%b8%9b%e0%b8%b4%e0%b8%94/",
-    "title": {
-      "rendered": "ประชุมครู 2 แผนก ก่อนเปิดเทอม"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/หน้าปก-1.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "กิจกรรม",
             "taxonomy": "category"
           }
         ]
