@@ -1,5 +1,285 @@
 [
   {
+    "id": 9707,
+    "date": "2026-07-25T11:26:23",
+    "link": "http://www.joseph.ac.th/2026/07/25/%e0%b8%99%e0%b8%b3%e0%b9%80%e0%b8%97%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b9%84%e0%b8%9b%e0%b8%88%e0%b8%b3%e0%b8%99%e0%b8%b3%e0%b8%9e%e0%b8%a3%e0%b8%a3%e0%b8%a9%e0%b8%b2-%e0%b8%93-%e0%b8%a7%e0%b8%b1%e0%b8%94/",
+    "title": {
+      "rendered": "นำเทียนไปจำนำพรรษา ณ วัดเชิงเลน"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/11-5.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "กิจกรรม",
+            "taxonomy": "category"
+          },
+          {
+            "name": "แผนกชาย",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 9667,
+    "date": "2026-07-25T10:48:42",
+    "link": "http://www.joseph.ac.th/2026/07/25/%e0%b8%9e%e0%b8%b4%e0%b8%98%e0%b8%b5%e0%b8%96%e0%b8%a7%e0%b8%b2%e0%b8%a2%e0%b8%9e%e0%b8%a3%e0%b8%b0%e0%b8%9e%e0%b8%a3%e0%b8%8a%e0%b8%b1%e0%b8%a2%e0%b8%a1%e0%b8%87%e0%b8%84%e0%b8%a5-%e0%b8%a3-2/",
+    "title": {
+      "rendered": "พิธีถวายพระพรชัยมงคล รัชกาลที่ 10"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/33-1.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "กิจกรรม",
+            "taxonomy": "category"
+          },
+          {
+            "name": "แผนกชาย",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 9650,
+    "date": "2026-07-25T10:38:03",
+    "link": "http://www.joseph.ac.th/2026/07/25/%e0%b8%a3%e0%b8%b1%e0%b8%9a%e0%b8%8a%e0%b8%b8%e0%b8%94%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b8%a8%e0%b8%b6%e0%b8%81%e0%b8%a9%e0%b8%b2%e0%b8%a7%e0%b8%b4%e0%b8%8a%e0%b8%b2%e0%b8%97%e0%b8%ab%e0%b8%b2%e0%b8%a3/",
+    "title": {
+      "rendered": "รับชุดนักศึกษาวิชาทหาร"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/03-4.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "กิจกรรม",
+            "taxonomy": "category"
+          },
+          {
+            "name": "แผนกชาย",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 9626,
+    "date": "2026-07-25T10:33:24",
+    "link": "http://www.joseph.ac.th/2026/07/25/%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%81%e0%b8%82%e0%b9%88%e0%b8%87%e0%b8%82%e0%b8%b1%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%80%e0%b8%82%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b9%82%e0%b8%9b%e0%b8%a3%e0%b9%81/",
+    "title": {
+      "rendered": "การแข่งขันการเขียนโปรแกรม Python ชั้นมัธยมศึกษาปีที่ 4"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/08-2.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "กิจกรรม",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 9604,
+    "date": "2026-07-25T10:26:19",
+    "link": "http://www.joseph.ac.th/2026/07/25/%e0%b8%9a%e0%b8%a3%e0%b8%a3%e0%b8%a2%e0%b8%b2%e0%b8%81%e0%b8%b2%e0%b8%a8%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%81%e0%b8%82%e0%b9%88%e0%b8%87%e0%b8%82%e0%b8%b1%e0%b8%99%e0%b8%ad%e0%b8%ad%e0%b8%81%e0%b9%81/",
+    "title": {
+      "rendered": "บรรยากาศการแข่งขันออกแบบโปสเตอร์วันวิทยาศาสตร์ ม.6"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/04-2.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "English Programme",
+            "taxonomy": "category"
+          },
+          {
+            "name": "กิจกรรม",
+            "taxonomy": "category"
+          },
+          {
+            "name": "แผนกชาย",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 9560,
+    "date": "2026-07-25T10:19:30",
+    "link": "http://www.joseph.ac.th/2026/07/25/%e0%b8%9a%e0%b8%a3%e0%b8%a3%e0%b8%a2%e0%b8%b2%e0%b8%81%e0%b8%b2%e0%b8%a8%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%81%e0%b8%82%e0%b9%88%e0%b8%87%e0%b8%82%e0%b8%b1%e0%b8%99%e0%b9%80%e0%b8%99%e0%b8%b7%e0%b9%88/",
+    "title": {
+      "rendered": "บรรยากาศการแข่งขันเนื่องในสัปดาห์พระพุทธศานา (Buddha Challenge Week)"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/15.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "กิจกรรม",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 9553,
+    "date": "2026-07-25T09:53:37",
+    "link": "http://www.joseph.ac.th/2026/07/25/%e0%b8%9a%e0%b8%a3%e0%b8%b4%e0%b8%a9%e0%b8%b1%e0%b8%97-%e0%b8%8a%e0%b8%b2%e0%b8%8d%e0%b8%81%e0%b8%b4%e0%b8%88%e0%b9%80%e0%b8%a0%e0%b8%aa%e0%b8%b1%e0%b8%8a%e0%b8%81%e0%b8%a3%e0%b8%a3%e0%b8%a1-%e0%b8%88/",
+    "title": {
+      "rendered": "บริษัท ชาญกิจเภสัชกรรม จำกัด (ร้านหมอยา บางบัวทอง) จังหวัดนทบุรี บริจาคชุดตรวจ ATK แก่นักเรียนและบุคลากรภายในสถานศึกษา ภายใต้โครงการ &#8220;ทำความดีตอบแทนสู่สังคม เฉลิมพระเกียรติพระบาทสมเด็จพระเจ้าอยู่หัว"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/04.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "กิจกรรม",
+            "taxonomy": "category"
+          },
+          {
+            "name": "แผนกชาย",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 9525,
+    "date": "2026-07-25T09:30:49",
+    "link": "http://www.joseph.ac.th/2026/07/25/%e0%b8%95%e0%b8%a3%e0%b8%a7%e0%b8%88%e0%b8%aa%e0%b8%b8%e0%b8%82%e0%b8%a0%e0%b8%b2%e0%b8%9e%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b9%80%e0%b8%a3%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%88/",
+    "title": {
+      "rendered": "ตรวจสุขภาพนักเรียนประจำปีการศึกษา 2569 แผนกอนุบาล"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/LINE_ALBUM_ตรวจสุขภาพประจำปีการศึกษา2569-แผนกปฐมวั_260725_26.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "อนุบาล",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
+    "id": 9464,
+    "date": "2026-07-25T09:27:18",
+    "link": "http://www.joseph.ac.th/2026/07/25/%e0%b8%81%e0%b8%b4%e0%b8%88%e0%b8%81%e0%b8%a3%e0%b8%a3%e0%b8%a1%e0%b8%aa%e0%b9%88%e0%b8%87%e0%b8%aa%e0%b8%a3%e0%b8%b4%e0%b8%a1%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%a3%e0%b8%b9%e0%b9%89%e0%b8%94/",
+    "title": {
+      "rendered": "กิจกรรมส่งสริมความรู้ด้านภาษาอังกฤษ ระดับชั้นอนุบาล 1"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/LINE_ALBUM_English-Day-Campอนุบาล1_260725_27.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "กิจกรรม",
+            "taxonomy": "category"
+          },
+          {
+            "name": "อนุบาล",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
     "id": 9426,
     "date": "2026-07-10T14:36:29",
     "link": "http://www.joseph.ac.th/2026/07/10/%e0%b8%81%e0%b8%b4%e0%b8%88%e0%b8%81%e0%b8%a3%e0%b8%a3%e0%b8%a1-zero-waste-2569-%e0%b9%80%e0%b8%a3%e0%b8%b4%e0%b9%88%e0%b8%a1%e0%b8%95%e0%b9%89%e0%b8%99%e0%b8%97%e0%b8%b5%e0%b9%88%e0%b9%82%e0%b8%a3/",
@@ -25,290 +305,6 @@
           },
           {
             "name": "อนุบาล",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 9407,
-    "date": "2026-07-06T08:45:34",
-    "link": "http://www.joseph.ac.th/2026/07/06/%e0%b8%81%e0%b8%b3%e0%b8%ab%e0%b8%99%e0%b8%94%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%a3%e0%b8%b1%e0%b8%9a%e0%b8%aa%e0%b8%a1%e0%b8%b1%e0%b8%84%e0%b8%a3%e0%b8%99%e0%b8%b1%e0%b8%81%e0%b9%80%e0%b8%a3%e0%b8%b5/",
-    "title": {
-      "rendered": "กำหนดการรับสมัครนักเรียน ปีการศึกษา 2570"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/2567.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "ประกาศ",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 9386,
-    "date": "2026-06-30T08:43:12",
-    "link": "http://www.joseph.ac.th/2026/06/30/%e0%b9%80%e0%b8%94%e0%b9%87%e0%b8%81%e0%b9%86-%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b8%84%e0%b8%b8%e0%b8%93%e0%b8%84%e0%b8%a3%e0%b8%b9%e0%b8%9f%e0%b8%ab%e0%b8%81%e0%b8%94-%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b8%84/",
-    "title": {
-      "rendered": "เด็กๆ และคุณครูแผนกอนุบาล เข้ารับการฉีดวัคซีนป้องกันโรคไข้หวัดใหญ่"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/LINE_ALBUM_📌29-มิ.ย.-2596-💉🩺-วัคซีนไข้หวัดใหญ่_260630_8.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "กิจกรรม",
-            "taxonomy": "category"
-          },
-          {
-            "name": "อนุบาล",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 9369,
-    "date": "2026-06-30T08:35:38",
-    "link": "http://www.joseph.ac.th/2026/06/30/%e0%b8%a0%e0%b8%b2%e0%b8%a9%e0%b8%b2%e0%b8%88%e0%b8%b5%e0%b8%99%e0%b8%99%e0%b9%88%e0%b8%b2%e0%b8%a3%e0%b8%b9%e0%b9%89-%e0%b8%aa%e0%b8%99%e0%b8%b8%e0%b8%81%e0%b8%81%e0%b8%b1%e0%b8%9a%e0%b8%81%e0%b8%b2/",
-    "title": {
-      "rendered": "ภาษาจีนน่ารู้ สนุกกับการเรียนรู้ตั้งแต่ปฐมวัย"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/LINE_ALBUM_💖29-มิ.ย.2569-🌟-ภาษาจีนน่ารู้_260630_1.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "กิจกรรม",
-            "taxonomy": "category"
-          },
-          {
-            "name": "อนุบาล",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 9322,
-    "date": "2026-06-30T08:32:24",
-    "link": "http://www.joseph.ac.th/2026/06/30/%e0%b9%82%e0%b8%84%e0%b8%a3%e0%b8%87%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%ab%e0%b8%a5%e0%b8%b1%e0%b8%81%e0%b8%aa%e0%b8%b9%e0%b8%95%e0%b8%a3%e0%b8%97%e0%b9%89%e0%b8%ad%e0%b8%87%e0%b8%96%e0%b8%b4%e0%b9%88-3/",
-    "title": {
-      "rendered": "โครงการหลักสูตรท้องถิ่นระดับปฐมวัย ภายใต้หัวข้อ &#8220;ชุมชนของฉัน&#8221;"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/LINE_ALBUM_26-มิถุนายน-69-🏡✨-ชุมชนของฉัน.อนุบาล-1_260630_3.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "กิจกรรม",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 9289,
-    "date": "2026-06-23T10:44:18",
-    "link": "http://www.joseph.ac.th/2026/06/23/%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%81%e0%b8%a7%e0%b8%94%e0%b8%88%e0%b8%b1%e0%b8%94%e0%b8%9e%e0%b8%b2%e0%b8%99%e0%b9%84%e0%b8%ab%e0%b8%a7%e0%b8%b1%e0%b8%84%e0%b8%a3%e0%b8%b9%e0%b8%9b%e0%b8%a3%e0%b8%b0/",
-    "title": {
-      "rendered": "ประกวดจัดพานไหวัครูประจำปีการศึกษา 2569"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/722638309_1743822763437568_934920925141011238_n.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "กิจกรรม",
-            "taxonomy": "category"
-          },
-          {
-            "name": "แผนกชาย",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 9279,
-    "date": "2026-06-23T10:36:35",
-    "link": "http://www.joseph.ac.th/2026/06/23/%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%8a%e0%b8%b8%e0%b8%a1%e0%b8%ab%e0%b8%b1%e0%b8%a7%e0%b8%ab%e0%b8%99%e0%b9%89%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%a2%e0%b8%a3%e0%b8%96%e0%b8%a3%e0%b9%88%e0%b8%a7%e0%b8%a1-2/",
-    "title": {
-      "rendered": "ประชุมหัวหน้าสายรถร่วมรับ-ส่งนักเรียนประจำเดือนมิถุนายน 2569"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/719099379_3175301752857820_6282724046304205927_n.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "กิจกรรม",
-            "taxonomy": "category"
-          },
-          {
-            "name": "แผนกชาย",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 9255,
-    "date": "2026-06-23T10:33:18",
-    "link": "http://www.joseph.ac.th/2026/06/23/%e0%b8%84%e0%b8%93%e0%b8%b0%e0%b8%84%e0%b8%a3%e0%b8%b9-plc-study-tour-project/",
-    "title": {
-      "rendered": "คณะครู PLC Study Tour Project"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/716829328_1704235597481348_4114481627158461757_n.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "กิจกรรม",
-            "taxonomy": "category"
-          },
-          {
-            "name": "แผนกชาย",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 9226,
-    "date": "2026-06-23T10:27:24",
-    "link": "http://www.joseph.ac.th/2026/06/23/english-workshop-developing-english-skills-throug/",
-    "title": {
-      "rendered": "English Workshop Developing English Skills Throug"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/708242702_1697802558124652_5815591740842244141_n.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "NELC",
-            "taxonomy": "category"
-          },
-          {
-            "name": "กิจกรรม",
-            "taxonomy": "category"
-          },
-          {
-            "name": "แผนกชาย",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 9125,
-    "date": "2026-06-23T10:16:32",
-    "link": "http://www.joseph.ac.th/2026/06/23/%e0%b8%9e%e0%b8%b4%e0%b8%98%e0%b8%b5%e0%b8%96%e0%b8%a7%e0%b8%b2%e0%b8%a2%e0%b8%9e%e0%b8%a3%e0%b8%b0%e0%b8%9e%e0%b8%a3%e0%b8%8a%e0%b8%b1%e0%b8%a2%e0%b8%a1%e0%b8%87%e0%b8%84%e0%b8%a5%e0%b8%aa%e0%b8%a1-2/",
-    "title": {
-      "rendered": "พิธีถวายพระพรชัยมงคลสมเด็จพระนางเจ้าฯ พระบรมราชินี"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/06/98.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "กิจกรรม",
-            "taxonomy": "category"
-          },
-          {
-            "name": "แผนกชาย",
             "taxonomy": "category"
           }
         ]
