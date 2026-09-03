@@ -1,5 +1,37 @@
 [
   {
+    "id": 9746,
+    "date": "2026-09-02T14:41:08",
+    "link": "http://www.joseph.ac.th/2026/09/02/%e0%b8%81%e0%b8%b4%e0%b8%88%e0%b8%81%e0%b8%a3%e0%b8%a3%e0%b8%a1-project-approach-%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%aa%e0%b8%ad%e0%b8%99%e0%b9%81%e0%b8%9a%e0%b8%9a%e0%b9%82%e0%b8%84%e0%b8%a3%e0%b8%87/",
+    "title": {
+      "rendered": "กิจกรรม Project Approach (การสอนแบบโครงการ) แผนกอนุบาล"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/09/LINE_ALBUM_Project-Approach_260902_26.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "กิจกรรม",
+            "taxonomy": "category"
+          },
+          {
+            "name": "อนุบาล",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
     "id": 9737,
     "date": "2026-08-17T12:12:37",
     "link": "http://www.joseph.ac.th/2026/08/17/%f0%9f%93%a2-%e0%b8%82%e0%b8%ad%e0%b9%80%e0%b8%a3%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b9%80%e0%b8%8a%e0%b8%b4%e0%b8%8d%e2%80%8b%e0%b8%a3%e0%b9%88%e0%b8%a7%e0%b8%a1%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%a7/",
@@ -271,38 +303,6 @@
       ],
       "wp:term": [
         [
-          {
-            "name": "อนุบาล",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 9464,
-    "date": "2026-07-25T09:27:18",
-    "link": "http://www.joseph.ac.th/2026/07/25/%e0%b8%81%e0%b8%b4%e0%b8%88%e0%b8%81%e0%b8%a3%e0%b8%a3%e0%b8%a1%e0%b8%aa%e0%b9%88%e0%b8%87%e0%b8%aa%e0%b8%a3%e0%b8%b4%e0%b8%a1%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%a3%e0%b8%b9%e0%b9%89%e0%b8%94/",
-    "title": {
-      "rendered": "กิจกรรมส่งสริมความรู้ด้านภาษาอังกฤษ ระดับชั้นอนุบาล 1"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/LINE_ALBUM_English-Day-Campอนุบาล1_260725_27.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "กิจกรรม",
-            "taxonomy": "category"
-          },
           {
             "name": "อนุบาล",
             "taxonomy": "category"
