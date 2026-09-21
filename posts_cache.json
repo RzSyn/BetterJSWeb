@@ -1,5 +1,33 @@
 [
   {
+    "id": 9971,
+    "date": "2026-09-21T08:43:03",
+    "link": "http://www.joseph.ac.th/2026/09/21/%e0%b8%81%e0%b8%b3%e0%b8%ab%e0%b8%99%e0%b8%94%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%aa%e0%b8%ad%e0%b8%9a%e0%b8%9b%e0%b8%a5%e0%b8%b2%e0%b8%a2%e0%b8%a0%e0%b8%b2%e0%b8%84%e0%b9%80%e0%b8%a3%e0%b8%b5%e0%b8%a2-2/",
+    "title": {
+      "rendered": "กำหนดการสอบปลายภาคเรียนที่ 1/2569"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/09/799264757_1753293652385566_6422546117586213880_n.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "ประกาศ",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
     "id": 9960,
     "date": "2026-09-15T13:54:21",
     "link": "http://www.joseph.ac.th/2026/09/15/%e0%b8%81%e0%b8%b3%e0%b8%ab%e0%b8%99%e0%b8%94%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%88%e0%b8%b1%e0%b8%94%e0%b8%81%e0%b8%b4%e0%b8%88%e0%b8%81%e0%b8%a3%e0%b8%a3%e0%b8%a1%e0%b9%80%e0%b8%82%e0%b9%89%e0%b8%b2/",
@@ -277,34 +305,6 @@
           },
           {
             "name": "แผนกชาย",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 9560,
-    "date": "2026-07-25T10:19:30",
-    "link": "http://www.joseph.ac.th/2026/07/25/%e0%b8%9a%e0%b8%a3%e0%b8%a3%e0%b8%a2%e0%b8%b2%e0%b8%81%e0%b8%b2%e0%b8%a8%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%81%e0%b8%82%e0%b9%88%e0%b8%87%e0%b8%82%e0%b8%b1%e0%b8%99%e0%b9%80%e0%b8%99%e0%b8%b7%e0%b9%88/",
-    "title": {
-      "rendered": "บรรยากาศการแข่งขันเนื่องในสัปดาห์พระพุทธศานา (Buddha Challenge Week)"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/15.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "กิจกรรม",
             "taxonomy": "category"
           }
         ]
