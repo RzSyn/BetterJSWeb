@@ -1,5 +1,33 @@
 [
   {
+    "id": 9984,
+    "date": "2026-10-14T08:16:09",
+    "link": "http://www.joseph.ac.th/2026/10/14/welcome-back-to-joseph-upatham-school/",
+    "title": {
+      "rendered": "Welcome Back to Joseph Upatham School"
+    },
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/10/848512064_1771210160838073_2989366368095617074_n.jpg"
+        }
+      ],
+      "author": [
+        {
+          "name": "admin1"
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "name": "ประกาศ",
+            "taxonomy": "category"
+          }
+        ]
+      ]
+    }
+  },
+  {
     "id": 9971,
     "date": "2026-09-21T08:43:03",
     "link": "http://www.joseph.ac.th/2026/09/21/%e0%b8%81%e0%b8%b3%e0%b8%ab%e0%b8%99%e0%b8%94%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%aa%e0%b8%ad%e0%b8%9a%e0%b8%9b%e0%b8%a5%e0%b8%b2%e0%b8%a2%e0%b8%a0%e0%b8%b2%e0%b8%84%e0%b9%80%e0%b8%a3%e0%b8%b5%e0%b8%a2-2/",
@@ -269,42 +297,6 @@
         [
           {
             "name": "กิจกรรม",
-            "taxonomy": "category"
-          }
-        ]
-      ]
-    }
-  },
-  {
-    "id": 9604,
-    "date": "2026-07-25T10:26:19",
-    "link": "http://www.joseph.ac.th/2026/07/25/%e0%b8%9a%e0%b8%a3%e0%b8%a3%e0%b8%a2%e0%b8%b2%e0%b8%81%e0%b8%b2%e0%b8%a8%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%81%e0%b8%82%e0%b9%88%e0%b8%87%e0%b8%82%e0%b8%b1%e0%b8%99%e0%b8%ad%e0%b8%ad%e0%b8%81%e0%b9%81/",
-    "title": {
-      "rendered": "บรรยากาศการแข่งขันออกแบบโปสเตอร์วันวิทยาศาสตร์ ม.6"
-    },
-    "_embedded": {
-      "wp:featuredmedia": [
-        {
-          "source_url": "http://www.joseph.ac.th/wp-content/uploads/2026/07/04-2.jpg"
-        }
-      ],
-      "author": [
-        {
-          "name": "admin1"
-        }
-      ],
-      "wp:term": [
-        [
-          {
-            "name": "English Programme",
-            "taxonomy": "category"
-          },
-          {
-            "name": "กิจกรรม",
-            "taxonomy": "category"
-          },
-          {
-            "name": "แผนกชาย",
             "taxonomy": "category"
           }
         ]
